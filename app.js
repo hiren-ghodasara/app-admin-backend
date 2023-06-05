@@ -21,7 +21,7 @@ app.post("/login", (req, res) => {
       maxAge: 900000,
       httpOnly: true,
       secure: true,
-      sameSite: "lax",
+      sameSite: "none",
     });
     console.log("cookie created successfully");
   } else {
