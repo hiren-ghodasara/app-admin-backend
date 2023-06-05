@@ -27,7 +27,7 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/check", (req, res) => {
-  console.log("req", req.cookies.sessionId);
+  console.log("req", req.cookies);
   res.send("Login successful!");
 });
 
