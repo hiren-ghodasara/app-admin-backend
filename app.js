@@ -17,7 +17,12 @@ app.post("/login", (req, res) => {
     // no: set a new cookie
     var randomNumber = Math.random().toString();
     randomNumber = randomNumber.substring(2, randomNumber.length);
-    res.cookie("cookieName", randomNumber, { maxAge: 900000, httpOnly: true });
+    res.cookie("cookieName", randomNumber, {
+      maxAge: 900000,
+      httpOnly: true,
+      secure: true,
+      sameSite: "lax",
+    });
     console.log("cookie created successfully");
   } else {
     // yes, cookie was already present
